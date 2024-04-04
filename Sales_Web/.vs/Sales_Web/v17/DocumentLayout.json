@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\SalesWebMain\\Sales_Web\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|d:\\saleswebmain\\sales_web\\sales_web\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|d:\\saleswebmain\\sales_web\\sales_web\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|d:\\saleswebmain\\sales_web\\sales_web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,16 +19,8 @@
       "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\areas\\admin\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|d:\\saleswebmain\\sales_web\\sales_web\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|d:\\saleswebmain\\sales_web\\sales_web\\models\\sd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\models\\sd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|d:\\saleswebmain\\sales_web\\sales_web\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|d:\\saleswebmain\\sales_web\\sales_web\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|d:\\saleswebmain\\sales_web\\sales_web\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Data\\20240404050201_UpdateSd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Sales_Web\\Data\\20240404050201_UpdateSd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|d:\\saleswebmain\\sales_web\\sales_web\\areas\\admin\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -61,6 +57,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|d:\\saleswebmain\\sales_web\\sales_web\\areas\\identity\\pages\\account\\manage\\_managenav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\areas\\identity\\pages\\account\\manage\\_managenav.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|d:\\saleswebmain\\sales_web\\sales_web\\data\\20240404050201_updatesd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\data\\20240404050201_updatesd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -83,32 +83,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EmployeesController.cs",
-              "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Areas\\Admin\\Controllers\\EmployeesController.cs",
-              "RelativeDocumentMoniker": "Sales_Web\\Areas\\Admin\\Controllers\\EmployeesController.cs",
-              "ToolTip": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Areas\\Admin\\Controllers\\EmployeesController.cs",
-              "RelativeToolTip": "Sales_Web\\Areas\\Admin\\Controllers\\EmployeesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T04:56:54.104Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Sales_Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "ToolTip": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeToolTip": "Sales_Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAaAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAqwC4AAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-04T04:53:06.065Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SD.cs",
               "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Models\\SD.cs",
               "RelativeDocumentMoniker": "Sales_Web\\Models\\SD.cs",
@@ -116,8 +103,7 @@
               "RelativeToolTip": "Sales_Web\\Models\\SD.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T04:49:31.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T04:49:31.655Z"
             },
             {
               "$type": "Document",
@@ -129,8 +115,7 @@
               "RelativeToolTip": "Sales_Web\\Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml.cs",
               "ViewState": "AQIAAC4AAAAAAAAAAAAYwDUAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T05:05:30.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T05:05:30.382Z"
             },
             {
               "$type": "Document",
@@ -142,8 +127,7 @@
               "RelativeToolTip": "Sales_Web\\Views\\Shared\\_LoginPartial.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvxcAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-04T04:47:25.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T04:47:25.084Z"
             },
             {
               "$type": "Document",
@@ -155,8 +139,7 @@
               "RelativeToolTip": "Sales_Web\\Models\\ApplicationUser.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T04:35:31.971Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T04:35:31.971Z"
             },
             {
               "$type": "Document",
@@ -168,12 +151,11 @@
               "RelativeToolTip": "Sales_Web\\Areas\\Admin\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T04:57:16.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T04:57:16.917Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Areas\\Admin\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Sales_Web\\Areas\\Admin\\Controllers\\ProductsController.cs",
@@ -181,12 +163,11 @@
               "RelativeToolTip": "Sales_Web\\Areas\\Admin\\Controllers\\ProductsController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T04:57:24.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T04:57:24.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Program.cs",
               "RelativeDocumentMoniker": "Sales_Web\\Program.cs",
@@ -194,25 +175,36 @@
               "RelativeToolTip": "Sales_Web\\Program.cs",
               "ViewState": "AQIAADMAAAAAAAAAAAAAADwAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T04:37:51.465Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T04:37:51.465Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "Sales_Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "ToolTip": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeToolTip": "Sales_Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAXAAAA",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAmwGAAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-04T04:44:04.197Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
+              "Title": "EmployeesController.cs",
+              "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Areas\\Admin\\Controllers\\EmployeesController.cs",
+              "RelativeDocumentMoniker": "Sales_Web\\Areas\\Admin\\Controllers\\EmployeesController.cs",
+              "ToolTip": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Areas\\Admin\\Controllers\\EmployeesController.cs",
+              "RelativeToolTip": "Sales_Web\\Areas\\Admin\\Controllers\\EmployeesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T04:56:54.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "20240404050201_UpdateSd.cs",
               "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Data\\20240404050201_UpdateSd.cs",
               "RelativeDocumentMoniker": "Sales_Web\\Data\\20240404050201_UpdateSd.cs",
@@ -220,12 +212,11 @@
               "RelativeToolTip": "Sales_Web\\Data\\20240404050201_UpdateSd.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T05:02:01.296Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T05:02:01.296Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Areas\\Admin\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "Sales_Web\\Areas\\Admin\\Views\\Shared\\_LoginPartial.cshtml",
@@ -233,12 +224,11 @@
               "RelativeToolTip": "Sales_Web\\Areas\\Admin\\Views\\Shared\\_LoginPartial.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-04T04:47:13.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T04:47:13.602Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Sales_Web\\Data\\ApplicationDbContext.cs",
@@ -246,12 +236,11 @@
               "RelativeToolTip": "Sales_Web\\Data\\ApplicationDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T04:46:18.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T04:46:18.555Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Sales_Web\\Controllers\\HomeController.cs",
@@ -259,12 +248,11 @@
               "RelativeToolTip": "Sales_Web\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T04:37:47.93Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T04:37:47.93Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "_ManageNav.cshtml",
               "DocumentMoniker": "D:\\SalesWebMain\\Sales_Web\\Sales_Web\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
               "RelativeDocumentMoniker": "Sales_Web\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
@@ -272,8 +260,7 @@
               "RelativeToolTip": "Sales_Web\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-04T04:35:25.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T04:35:25.666Z"
             }
           ]
         }
