@@ -28,21 +28,13 @@ namespace Sales_Web.Areas.Admin.Controllers
         }
 
         // GET: Admin/Products/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Display(int id)
         {
-            if (id == null || _context.Products == null)
-            {
-                return NotFound();
-            }
-
-            var product = await _context.Products
-                .Include(p => p.Category)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var product = await _productRepository.GetByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
-
             return View(product);
         }
 
