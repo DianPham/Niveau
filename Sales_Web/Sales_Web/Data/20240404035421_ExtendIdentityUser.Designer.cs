@@ -3,17 +3,19 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sales_Web.Data;
 
 #nullable disable
 
-namespace Sales_Web.Migrations
+namespace Sales_Web.Data
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240404035421_ExtendIdentityUser")]
+    partial class ExtendIdentityUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -222,7 +224,7 @@ namespace Sales_Web.Migrations
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("Sales_Web.Models.Products.Category", b =>
+            modelBuilder.Entity("Sales_Web.Areas.Admin.Models.Products.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -240,7 +242,7 @@ namespace Sales_Web.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Sales_Web.Models.Products.Product", b =>
+            modelBuilder.Entity("Sales_Web.Areas.Admin.Models.Products.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -285,7 +287,7 @@ namespace Sales_Web.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Sales_Web.Models.Products.ProductImage", b =>
+            modelBuilder.Entity("Sales_Web.Areas.Admin.Models.Products.ProductImage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -434,9 +436,9 @@ namespace Sales_Web.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Sales_Web.Models.Products.Product", b =>
+            modelBuilder.Entity("Sales_Web.Areas.Admin.Models.Products.Product", b =>
                 {
-                    b.HasOne("Sales_Web.Models.Products.Category", "Category")
+                    b.HasOne("Sales_Web.Areas.Admin.Models.Products.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -445,9 +447,9 @@ namespace Sales_Web.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Sales_Web.Models.Products.ProductImage", b =>
+            modelBuilder.Entity("Sales_Web.Areas.Admin.Models.Products.ProductImage", b =>
                 {
-                    b.HasOne("Sales_Web.Models.Products.Product", "Product")
+                    b.HasOne("Sales_Web.Areas.Admin.Models.Products.Product", "Product")
                         .WithMany("Images")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -456,12 +458,12 @@ namespace Sales_Web.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Sales_Web.Models.Products.Category", b =>
+            modelBuilder.Entity("Sales_Web.Areas.Admin.Models.Products.Category", b =>
                 {
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("Sales_Web.Models.Products.Product", b =>
+            modelBuilder.Entity("Sales_Web.Areas.Admin.Models.Products.Product", b =>
                 {
                     b.Navigation("Images");
                 });

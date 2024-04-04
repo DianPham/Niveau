@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Sales_Web.Data;
 using Sales_Web.Areas.Admin.Models.Repositories;
+using Sales_Web.Areas.Admin.Models.Accounts;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,13 +14,16 @@ builder.Services.AddControllersWithViews();
 
 var connectString = builder.Configuration.GetConnectionString("DefautConnection") ?? throw new InvalidOperationException("Connection string 'DefautConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectString));
+
+
 //builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 .AddDefaultTokenProviders()
 .AddDefaultUI()
 .AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.AddRazorPages();
 
 builder.Services.AddScoped<IProductsRepository,EFProductsRepository>();
@@ -44,7 +50,6 @@ app.UseAuthentication();;
 
 app.MapRazorPages();
 
-
 app.UseAuthorization();
 
 //app.MapControllerRoute(
@@ -67,4 +72,6 @@ app.UseEndpoints(endpoints =>
         pattern: "{controller=Home}/{action=Index}/{id?}"
     );
 });
+
+
 app.Run();
