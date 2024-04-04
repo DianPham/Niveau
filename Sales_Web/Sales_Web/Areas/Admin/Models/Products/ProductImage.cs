@@ -1,4 +1,4 @@
-﻿namespace Sales_Web.Models.Products
+﻿namespace Sales_Web.Areas.Admin.Models.Products
 {
     public class ProductImage
     {

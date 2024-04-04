@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Sales_Web.Models.Products.Product>
+﻿@model IEnumerable<Sales_Web.Areas.Admin.Models.Products.Product>
 
 @{
     ViewData["Title"] = "Index";
@@ -9,6 +9,7 @@
 
 <p>
     <a asp-action="Create">Create New</a>
+    <a asp-controller="Categories" asp-action="Index">Category</a>
 </p>
 <table class="table">
     <thead>

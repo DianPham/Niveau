@@ -1,21 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sales_Web.Areas.Admin.Models.Products;
 using Sales_Web.Data;
-using Sales_Web.Models.Products;
 
 namespace Sales_Web.Areas.Admin.Models.Repositories
 {
-    public class EFProductRepository : IProductRepository
+    public class EFProductsRepository : IProductsRepository
     {
         private readonly ApplicationDbContext _context;
-
-        public EFProductRepository(ApplicationDbContext context)
+        public EFProductsRepository(ApplicationDbContext context)
         {
             _context = context;
         }
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
             // return await _context.Products.ToListAsync();
-            return await _context.Products.Include(p => p.Category).ToListAsync();
+            return await _context.Products
+            .Include(p => p.Category) // Include thông tin về category
+            .ToListAsync();
         }
         public async Task<Product> GetByIdAsync(int id)
         {

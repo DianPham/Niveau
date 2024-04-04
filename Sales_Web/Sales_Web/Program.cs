@@ -2,6 +2,7 @@ using Microsoft.CodeAnalysis.Options;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Sales_Web.Data;
+using Sales_Web.Areas.Admin.Models.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,8 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
 
-
+builder.Services.AddScoped<IProductsRepository,EFProductsRepository>();
+builder.Services.AddScoped<ICategoriesRepository, EFCategoriesRepository>();
 
 builder.Services.AddControllersWithViews();
 
@@ -31,6 +33,7 @@ if (!app.Environment.IsDevelopment())
 {
 	app.UseExceptionHandler("/Home/Error");
 }
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -49,9 +52,6 @@ app.UseAuthorization();
 //	pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
-//app.MapControllerRoute(
-//    name: "default",
-//    pattern: "{controller=Home}/{action=Index}/{id?}");
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(

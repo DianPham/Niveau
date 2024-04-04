@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Sales_Web.Areas.Admin.Models;
 
-namespace Sales_Web.Models.Products
+namespace Sales_Web.Areas.Admin.Models.Products
 {
     public class Product : AdminActivity
     {
