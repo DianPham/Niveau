@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Sales_Web.Models;
-
+using Sales_Web.Areas.Admin.Models.Accounts;
 namespace Sales_Web.Areas.Identity.Pages.Account.Manage
 {
     public class SetPasswordModel : PageModel

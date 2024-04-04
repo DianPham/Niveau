@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Sales_Web.Models;
+using Sales_Web.Areas.Admin.Models.Accounts;
 namespace Sales_Web.Areas.Identity.Pages.Account.Manage
 {
     public class ChangePasswordModel : PageModel

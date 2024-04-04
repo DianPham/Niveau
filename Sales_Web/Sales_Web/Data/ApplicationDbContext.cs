@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Sales_Web.Areas.Admin.Models.Employees;
 using Sales_Web.Areas.Admin.Models.Products;
 using Sales_Web.Models;
-
+using Sales_Web.Areas.Admin.Models.Accounts;
 namespace Sales_Web.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Sales_Web"
+    "\\Sales_Web",
+    "\\Sales_Web\\Sales_Web",
+    "\\Sales_Web\\Sales_Web\\Areas",
+    "\\Sales_Web\\Sales_Web\\Areas\\Identity",
+    "\\Sales_Web\\Sales_Web\\Areas\\Identity\\Pages",
+    "\\Sales_Web\\Sales_Web\\Areas\\Identity\\Pages\\Account",
+    "\\Sales_Web\\Sales_Web\\Areas\\Identity\\Pages\\Account\\Manage"
   ],
-  "SelectedNode": "\\Sales_Web\\Sales_Web.sln",
+  "SelectedNode": "\\Sales_Web\\Sales_Web\\Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml.cs",
   "PreviewInSolutionExplorer": false
 }
