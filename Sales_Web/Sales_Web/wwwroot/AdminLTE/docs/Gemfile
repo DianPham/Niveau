@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+group :development, :test do
+  gem 'jekyll', 'Sales_Web/wwwroot/> 4.2.1'
+  gem 'jekyll-seo-tag', 'Sales_Web/wwwroot/> 2.7.1'
+  gem 'jekyll-sitemap', 'Sales_Web/wwwroot/> 1.4.0'
+  gem 'wdm', 'Sales_Web/wwwroot/> 0.1.1', :install_if => Gem.win_platform?
+end
+
+
+gem "webrick", "Sales_Web/wwwroot/> 1.7"

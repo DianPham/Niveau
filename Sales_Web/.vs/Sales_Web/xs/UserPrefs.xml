@@ -1,0 +1,68 @@
+﻿<Properties StartupConfiguration="{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sales_Web/Areas/Identity/Pages/Account/Login.cshtml">
+    <Files>
+      <File FileName="Sales_Web/Areas/Identity/Pages/Account/Register.cshtml.cs" Line="26" Column="69" />
+      <File FileName="Sales_Web/Areas/Identity/Pages/Account/Register.cshtml" Line="31" Column="54" />
+      <File FileName="Sales_Web/Program.cs" Line="1" Column="1" />
+      <File FileName="Sales_Web/Views/Shared/_Layout.cshtml" Line="111" Column="34" />
+      <File FileName="Sales_Web/Areas/Identity/Pages/Account/Login.cshtml" Line="26" Column="42" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Sales_Web" expanded="True">
+            <Node name="Sales_Web">
+              <Node name="Areas" expanded="True">
+                <Node name="Admin" expanded="True">
+                  <Node name="Views" expanded="True">
+                    <Node name="Shared" expanded="True" />
+                  </Node>
+                </Node>
+                <Node name="Identity">
+                  <Node name="Pages" expanded="True">
+                    <Node name="Account" expanded="True">
+                      <Node name="Login.cshtml" selected="True" />
+                      <Node name="Register.cshtml" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="wwwroot" expanded="True">
+                <Node name="AdminLTE" expanded="True">
+                  <Node name="build" expanded="True">
+                    <Node name="scss" expanded="True" />
+                  </Node>
+                  <Node name="dist" expanded="True">
+                    <Node name="css" expanded="True">
+                      <Node name="alt" expanded="True" />
+                    </Node>
+                    <Node name="js" expanded="True" />
+                  </Node>
+                  <Node name="plugins" expanded="True" />
+                </Node>
+                <Node name="css" expanded="True" />
+                <Node name="js" expanded="True" />
+                <Node name="lib" expanded="True">
+                  <Node name="bootstrap" expanded="True">
+                    <Node name="dist" expanded="True">
+                      <Node name="css" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Sales__Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
