@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Sales_Web.Models;
 using System.Diagnostics;
 
 namespace Sales_Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize(Roles = SD.Role_Admin)]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
