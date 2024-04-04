@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Sales_Web.Areas.Admin.Models.Repositories;
 using Sales_Web.Data;
 using Sales_Web.Models.Products;
 
@@ -15,11 +17,15 @@ namespace Sales_Web.Areas.Admin.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        public ProductsController(ApplicationDbContext context)
+        private readonly IProductRepository _productRepository;
+        private readonly ICategoryRepository _categoryRepository;
+        public ProductsController(IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
-            _context = context;
+            _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
 
+ 
         // GET: Admin/Products
         public async Task<IActionResult> Index()
         {
@@ -47,9 +53,10 @@ namespace Sales_Web.Areas.Admin.Controllers
         }
 
         // GET: Admin/Products/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
+            var categories = await _categoryRepository.GetAllAsync();
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
             return View();
         }
 

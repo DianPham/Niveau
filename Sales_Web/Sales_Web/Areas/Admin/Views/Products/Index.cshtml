@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Quản lý sản phẩm</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -34,12 +34,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.CreatedOn)
             </th>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.ModifiedById)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ModifiedOn)
-            </th>
+            </th> *@
             <th></th>
         </tr>
     </thead>
@@ -67,12 +67,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedOn)
             </td>
-            <td>
+            @* <td>
                 @Html.DisplayFor(modelItem => item.ModifiedById)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ModifiedOn)
-            </td>
+            </td> *@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
