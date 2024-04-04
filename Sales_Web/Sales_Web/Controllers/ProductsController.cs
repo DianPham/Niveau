@@ -23,7 +23,7 @@ namespace Sales_Web.Controllers
 
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Products == null)
+            /*if (id == null || _context.Products == null)
             {
                 return NotFound();
             }
@@ -35,8 +35,8 @@ namespace Sales_Web.Controllers
             {
                 return NotFound();
             }
-
-            return View(product);
+*/
+            return View(/*product*/);
         }
     }
 }

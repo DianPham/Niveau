@@ -58,8 +58,10 @@ namespace Sales_Web.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price,Description,ImageUrl,CategoryId,CreatedById,CreatedOn,ModifiedById,ModifiedOn")] Product product)
+        public async Task<IActionResult> Create(Product product)
         {
+
+            product.CreatedOn = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Add(product);
