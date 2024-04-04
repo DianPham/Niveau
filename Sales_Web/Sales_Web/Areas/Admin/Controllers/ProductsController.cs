@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Sales_Web.Areas.Admin.Models.Products;
 using Sales_Web.Data;
+using Sales_Web.Models.Products;
 
 namespace Sales_Web.Areas.Admin.Controllers
 {

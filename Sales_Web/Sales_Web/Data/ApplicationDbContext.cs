@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Sales_Web.Areas.Admin.Models.Employees;
-using Sales_Web.Areas.Admin.Models.Products;
+using Sales_Web.Models.Products;
 
 namespace Sales_Web.Data
 {
