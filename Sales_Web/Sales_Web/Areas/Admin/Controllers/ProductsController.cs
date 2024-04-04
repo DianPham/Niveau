@@ -41,7 +41,7 @@ namespace Sales_Web.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Product product, IFormFile imageUrl, List<IFormFile> imageUrls)
         {
-           /* if (ModelState.IsValid)
+            /*if (ModelState.IsValid)
             {
                 if (imageUrl != null)
                 {
