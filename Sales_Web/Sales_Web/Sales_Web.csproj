@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Views\Account\" />
     <Folder Include="Areas\User\Data\" />
     <Folder Include="Areas\User\Models\" />
   </ItemGroup>
