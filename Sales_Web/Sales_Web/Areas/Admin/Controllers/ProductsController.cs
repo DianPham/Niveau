@@ -42,9 +42,9 @@ namespace Sales_Web.Areas.Admin.Controllers
         }
         // Xử lý thêm sản phẩm mới
         [HttpPost]
-        public async Task<IActionResult> Create(Product product, IFormFile imageUrl, List<IFormFile> imageUrls)
+        public async Task<IActionResult> Create(Product product, IFormFile imageUrl,List<IFormFile> imageUrls)
         {
-            /*if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 if (imageUrl != null)
                 {
@@ -53,27 +53,43 @@ namespace Sales_Web.Areas.Admin.Controllers
                 }
                 if (imageUrls != null)
                 {
-                    product.ImageUrl = new List<string>();
+                    product.Images = new List<ProductImage>();                   
                     foreach (var file in imageUrls)
                     {
+                        ProductImage image = new ProductImage();
+                        image.Product = product;
+                        image.ProductId = product.Images.Max(i => i.ProductId) + 1;
                         // Lưu các hình ảnh khác
-                        product.ImageUrl(await SaveImage(file));
+                        product.Images.Add(await SaveImage(file, image));
                     }
                 }
-                _productRepository.AddAsync(product);
+                await _productRepository.AddAsync(product);
                 return RedirectToAction("Index");
-            }*/
+            }
             return View(product);
         }
         // Viết thêm hàm SaveImage (tham khảo bài 02)
         private async Task<string> SaveImage(IFormFile image)
         {
-            var savePath = Path.Combine("wwwroot/images", image.FileName);
+            var savePath = Path.Combine("wwwroot/images", image.FileName); // Thay
             using (var fileStream = new FileStream(savePath, FileMode.Create))
             {
                 await image.CopyToAsync(fileStream);
             }
+
             return "/images/" + image.FileName; // Trả về đường dẫn tương đối
+        }
+        private async Task<ProductImage> SaveImage(IFormFile image, ProductImage pImage)
+        {
+            var savePath = Path.Combine("wwwroot/images", image.FileName); // Thay
+            using (var fileStream = new FileStream(savePath, FileMode.Create))
+            {
+                await image.CopyToAsync(fileStream);
+            }
+
+            pImage.Url = "/images/" + image.FileName;
+
+            return pImage; // Trả về đường dẫn tương đối
         }
         //Nhớ tạo folder images trong wwwroot
 

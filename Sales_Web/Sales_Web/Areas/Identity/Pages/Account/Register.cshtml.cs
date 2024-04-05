@@ -15,8 +15,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using Sales_Web.Models;
 using Sales_Web.Areas.Admin.Models.Accounts;
+using Sales_Web.Areas.Admin.Models;
+
 namespace Sales_Web.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
