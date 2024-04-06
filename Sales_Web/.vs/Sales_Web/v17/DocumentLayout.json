@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Niveau\\Sales_Web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|f:\\niveau\\sales_web\\sales_web\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|f:\\niveau\\sales_web\\sales_web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{76EB6208-AFA3-4582-A9E4-A6ED5EB18CB9}|Sales_Web\\Sales_Web.csproj|solutionrelative:sales_web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "F:\\Niveau\\Sales_Web\\Sales_Web\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Sales_Web\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "F:\\Niveau\\Sales_Web\\Sales_Web\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Sales_Web\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T04:36:27.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\Niveau\\Sales_Web\\Sales_Web\\appsettings.json",
+              "RelativeDocumentMoniker": "Sales_Web\\appsettings.json",
+              "ToolTip": "F:\\Niveau\\Sales_Web\\Sales_Web\\appsettings.json",
+              "RelativeToolTip": "Sales_Web\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-06T04:30:45.22Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
