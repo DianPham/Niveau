@@ -1,4 +1,4 @@
-﻿namespace Sales_Web.Models
+﻿namespace Sales_Web.Areas.Admin.Models
 {
     public static class SD
     {

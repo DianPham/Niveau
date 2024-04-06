@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\images\" />
     <Folder Include="Areas\User\Data\" />
   </ItemGroup>
 
