@@ -1,22 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Sales_Web.Models;
 using System.Diagnostics;
+using Sales_Web.Areas.Admin.Models.Repositories;
 
 namespace Sales_Web.Areas.User.Controllers
 {
     [Area("User")]
     public class HomeController : Controller
     {
+        private readonly IProductsRepository _productsRepository;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProductsRepository productsRepository)
         {
             _logger = logger;
+            _productsRepository = productsRepository;
         }
 
-        public IActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View();
+            var product = await _productsRepository.GetAllAsync();
+            return View(product);
         }
 
         public IActionResult Privacy()

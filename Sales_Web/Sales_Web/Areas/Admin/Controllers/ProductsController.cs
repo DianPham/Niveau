@@ -9,13 +9,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Sales_Web.Areas.Admin.Models.Products;
 using Sales_Web.Areas.Admin.Models.Repositories;
+using Sales_Web.Areas.Admin.Models;
 using Sales_Web.Data;
 using Sales_Web.Models;
 
 namespace Sales_Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    //[Authorize(Roles = SD.Role_Admin)]
+    [Authorize(Roles = SD.Role_Admin)]
     public class ProductsController : Controller
     {
 
@@ -42,6 +43,7 @@ namespace Sales_Web.Areas.Admin.Controllers
         }
         // Xử lý thêm sản phẩm mới
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Create(Product product, IFormFile imageUrl, List<IFormFile> imageUrls)
         {
             if (ModelState.IsValid)
@@ -66,6 +68,9 @@ namespace Sales_Web.Areas.Admin.Controllers
                 await _productRepository.AddAsync(product);
                 return RedirectToAction("Index");
             }
+            // Nếu ModelState không hợp lệ, hiển thị form với dữ liệu đã nhập
+            var categories = await _categoryRepository.GetAllAsync();
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
             return View(product);
         }
         // Viết thêm hàm SaveImage (tham khảo bài 02)
@@ -118,8 +123,7 @@ namespace Sales_Web.Areas.Admin.Controllers
         }
         // Xử lý cập nhật sản phẩm
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, Product product,
-        IFormFile imageUrl)
+        public async Task<IActionResult> Edit(int id, Product product, IFormFile imageUrl)
         {
             ModelState.Remove("ImageUrl"); // Loại bỏ xác thực ModelState cho
             if (id != product.Id)

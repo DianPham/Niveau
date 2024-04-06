@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Sales_Web.Areas.Admin.Models;
 using Sales_Web.Areas.Admin.Models.Employees;
 using Sales_Web.Data;
-using Sales_Web.Models;
 
 namespace Sales_Web.Areas.Admin.Controllers
 {
@@ -27,8 +27,8 @@ namespace Sales_Web.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             return _context.Employees != null ?
-                        View(await _context.Employees.ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.Employees'  is null.");
+            View(await _context.Employees.ToListAsync()) :
+            Problem("Entity set 'ApplicationDbContext.Employees' is null.");
         }
 
         // GET: Admin/Employees/Details/5

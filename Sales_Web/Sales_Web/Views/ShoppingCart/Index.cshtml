@@ -1,0 +1,147 @@
+﻿@model ShoppingCart
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your Cart</h2>
+<table class="table" id="cartTable">
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Action</th>
+    </tr>
+    @if (Model.Items.Any())
+    {
+        @foreach (var item in Model.Items)
+        {
+            <tr data-product-id="@item.ProductId">
+                <td>@item.Name</td>
+                <td class="quantity">
+                    <button class="btn btn-outline-primary increase">+</button>
+                    <span>@item.Quantity</span>
+                    <button class="btn btn-outline-primary decrease">-</button>
+                </td>
+                <td class="price">@item.Price</td>
+                <td class="total">@(item.Price * item.Quantity)</td>
+                <td>
+                    <a asp-action="RemoveFromCart" asp-route-productId="@item.ProductId">
+                        <button class="btn btn-outline-dark">Remove</button>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <h1>notting to show</h1>
+    }
+</table>
+
+<div id="totalAmount">
+    <p>Sub Total: </p>
+</div>
+
+@* Thêm nút xóa tất cả và nút đặt hàng *@
+<div class="row">
+    <div class="col-md-6">
+        <button class="btn btn-danger" id="clearCart">Clear Cart</button>
+    </div>
+    <div class="col-md-6 text-right">
+        <form asp-action="Checkout" method="get">
+            <button class="btn btn-success">Checkout</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <a asp-controller="Home" asp-action="Index">Back To Shop</a>
+    </div>
+</div>
+
+
+
+@section scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Gọi hàm tính tổng tiền khi trang được tải
+            calculateTotal();
+
+            // Lấy tất cả các nút tăng và giảm
+            const increaseButtons = document.querySelectorAll('.increase');
+            const decreaseButtons = document.querySelectorAll('.decrease');
+
+            // Lặp qua mỗi nút tăng và giảm để gắn sự kiện
+            increaseButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const quantityElement = button.parentElement.querySelector('span');
+                    let quantity = parseInt(quantityElement.textContent);
+                    quantity++;
+                    quantityElement.textContent = quantity;
+
+                    updateTotal(button);
+                });
+            });
+
+            decreaseButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const quantityElement = button.parentElement.querySelector('span');
+                    let quantity = parseInt(quantityElement.textContent);
+                    if (quantity > 1) {
+                        quantity--;
+                        quantityElement.textContent = quantity;
+
+                        updateTotal(button);
+                    }
+                });
+            });
+
+            // Gắn sự kiện xóa tất cả
+            const clearCartButton = document.getElementById('clearCart');
+            clearCartButton.addEventListener('click', function () {
+                const cartTable = document.getElementById('cartTable');
+                const rows = cartTable.querySelectorAll('tr');
+                // Lặp qua từng hàng, bắt đầu từ hàng thứ hai (không tính tiêu đề)
+                for (let i = 1; i < rows.length; i++) {
+                    rows[i].remove(); // Xóa hàng
+                }
+
+                // Xóa tổng tiền khi xóa tất cả sản phẩm
+                document.getElementById('totalAmount').textContent = '';
+
+                // Gọi lại hàm tính tổng tiền
+                calculateTotal();
+            });
+
+            // Hàm tính tổng tiền
+            function calculateTotal() {
+                const totalCells = document.querySelectorAll('.total');
+                let totalAmount = 0;
+                totalCells.forEach(cell => {
+                    totalAmount += parseFloat(cell.textContent);
+                });
+                // Hiển thị tổng tiền
+                document.getElementById('totalAmount').textContent = 'Total Amount: $' + totalAmount.toFixed(2);
+            }
+
+            // Hàm cập nhật tổng tiền của sản phẩm
+            function updateTotal(button) {
+                const row = button.closest('tr');
+                const quantityElement = row.querySelector('.quantity span');
+                const priceElement = row.querySelector('.price');
+                const totalElement = row.querySelector('.total');
+                const quantity = parseInt(quantityElement.textContent);
+                const price = parseFloat(priceElement.textContent);
+                totalElement.textContent = (price * quantity).toFixed(2);
+
+                calculateTotal();
+            }
+            // Gọi hàm tính tổng tiền khi trang được tải
+            calculateTotal();
+        });
+    </script>
+}
+
+
+
+
