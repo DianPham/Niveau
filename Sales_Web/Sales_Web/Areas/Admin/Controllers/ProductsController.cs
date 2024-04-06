@@ -28,6 +28,11 @@ namespace Sales_Web.Areas.Admin.Controllers
             _categoryRepository = categoryRepository;
         }
         // Hiển thị danh sách sản phẩm
+        public async Task<IActionResult> List()
+        {
+            var products = await _productRepository.GetAllAsync();
+            return View(products);
+        }
         public async Task<IActionResult> Index()
         {
             var products = await _productRepository.GetAllAsync();
@@ -94,6 +99,7 @@ namespace Sales_Web.Areas.Admin.Controllers
         //Nhớ tạo folder images trong wwwroot
 
         // Hiển thị thông tin chi tiết sản phẩm
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var product = await _productRepository.GetByIdAsync(id);
