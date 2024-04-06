@@ -2,176 +2,170 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Xml.Linq;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Sales_Web.Areas.Admin.Models.Products;
-using Sales_Web.Areas.Admin.Models.Repositories;
 using Sales_Web.Data;
-using Sales_Web.Models;
+using Sales_Web.Models.Products;
 
 namespace Sales_Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    //[Authorize(Roles = SD.Role_Admin)]
     public class ProductsController : Controller
     {
+        private readonly ApplicationDbContext _context;
 
-        private readonly IProductsRepository _productRepository;
-        private readonly ICategoriesRepository _categoryRepository;
-        public ProductsController(IProductsRepository productRepository,
-        ICategoriesRepository categoryRepository)
+        public ProductsController(ApplicationDbContext context)
         {
-            _productRepository = productRepository;
-            _categoryRepository = categoryRepository;
+            _context = context;
         }
-        // Hiển thị danh sách sản phẩm
+
+        // GET: Admin/Products
         public async Task<IActionResult> Index()
         {
-            var products = await _productRepository.GetAllAsync();
-            return View(products);
+            var applicationDbContext = _context.Products.Include(p => p.Category);
+            return View(await applicationDbContext.ToListAsync());
         }
-        // Hiển thị form thêm sản phẩm mới
-        public async Task<IActionResult> Create()
+
+        // GET: Admin/Products/Details/5
+        public async Task<IActionResult> Display(int id)
         {
-            var categories = await _categoryRepository.GetAllAsync();
-            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            if (id == null || _context.Products == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Products
+                .Include(p => p.Category)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
+        }
+
+        // GET: Admin/Products/Create
+        public IActionResult Create()
+        {
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
             return View();
         }
-        // Xử lý thêm sản phẩm mới
+
+        // POST: Admin/Products/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public async Task<IActionResult> Create(Product product, IFormFile imageUrl,List<IFormFile> imageUrls)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Product product)
         {
+
+            product.CreatedOn = DateTime.Now;
             if (ModelState.IsValid)
             {
-                if (imageUrl != null)
-                {
-                    // Lưu hình ảnh đại diện
-                    product.ImageUrl = await SaveImage(imageUrl);
-                }
-                if (imageUrls != null)
-                {
-                    product.Images = new List<ProductImage>();                   
-                    foreach (var file in imageUrls)
-                    {
-                        ProductImage image = new ProductImage();
-                        image.Product = product;
-                        image.ProductId = product.Images.Max(i => i.ProductId) + 1;
-                        // Lưu các hình ảnh khác
-                        product.Images.Add(await SaveImage(file, image));
-                    }
-                }
-                await _productRepository.AddAsync(product);
-                return RedirectToAction("Index");
+                _context.Add(product);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
             return View(product);
         }
-        // Viết thêm hàm SaveImage (tham khảo bài 02)
-        private async Task<string> SaveImage(IFormFile image)
+
+        // GET: Admin/Products/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
-            var savePath = Path.Combine("wwwroot/images", image.FileName); // Thay
-            using (var fileStream = new FileStream(savePath, FileMode.Create))
+            if (id == null || _context.Products == null)
             {
-                await image.CopyToAsync(fileStream);
+                return NotFound();
             }
 
-            return "/images/" + image.FileName; // Trả về đường dẫn tương đối
-        }
-        private async Task<ProductImage> SaveImage(IFormFile image, ProductImage pImage)
-        {
-            var savePath = Path.Combine("wwwroot/images", image.FileName); // Thay
-            using (var fileStream = new FileStream(savePath, FileMode.Create))
-            {
-                await image.CopyToAsync(fileStream);
-            }
-
-            pImage.Url = "/images/" + image.FileName;
-
-            return pImage; // Trả về đường dẫn tương đối
-        }
-        //Nhớ tạo folder images trong wwwroot
-
-        // Hiển thị thông tin chi tiết sản phẩm
-        public async Task<IActionResult> Details(int id)
-        {
-            var product = await _productRepository.GetByIdAsync(id);
+            var product = await _context.Products.FindAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
             return View(product);
         }
-        // Hiển thị form cập nhật sản phẩm
-        public async Task<IActionResult> Edit(int id)
-        {
-            var product = await _productRepository.GetByIdAsync(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            var categories = await _categoryRepository.GetAllAsync();
-            ViewBag.Categories = new SelectList(categories, "Id", "Name",
-            product.CategoryId);
-            return View(product);
-        }
-        // Xử lý cập nhật sản phẩm
+
+        // POST: Admin/Products/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, Product product,
-        IFormFile imageUrl)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Description,ImageUrl,CategoryId,CreatedById,CreatedOn,ModifiedById,ModifiedOn")] Product product)
         {
-            ModelState.Remove("ImageUrl"); // Loại bỏ xác thực ModelState cho
             if (id != product.Id)
             {
                 return NotFound();
             }
+
             if (ModelState.IsValid)
             {
-                var existingProduct = await
-                _productRepository.GetByIdAsync(id); // Giả định có phương thức GetByIdAsync
-                                                     // Giữ nguyên thông tin hình ảnh nếu không có hình mới được
-
-                if (imageUrl == null)
+                try
                 {
-                    product.ImageUrl = existingProduct.ImageUrl;
+                    _context.Update(product);
+                    await _context.SaveChangesAsync();
                 }
-                else
+                catch (DbUpdateConcurrencyException)
                 {
-                    // Lưu hình ảnh mới
-
-                    product.ImageUrl = await SaveImage(imageUrl);
-
+                    if (!ProductExists(product.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
-                // Cập nhật các thông tin khác của sản phẩm
-                existingProduct.Name = product.Name;
-                existingProduct.Price = product.Price;
-                existingProduct.Description = product.Description;
-                existingProduct.CategoryId = product.CategoryId;
-                existingProduct.ImageUrl = product.ImageUrl;
-                await _productRepository.UpdateAsync(existingProduct);
                 return RedirectToAction(nameof(Index));
             }
-            var categories = await _categoryRepository.GetAllAsync();
-            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
             return View(product);
         }
-        // Hiển thị form xác nhận xóa sản phẩm
-        public async Task<IActionResult> Delete(int id)
+
+        // GET: Admin/Products/Delete/5
+        public async Task<IActionResult> Delete(int? id)
         {
-            var product = await _productRepository.GetByIdAsync(id);
+            if (id == null || _context.Products == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Products
+                .Include(p => p.Category)
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
             {
                 return NotFound();
             }
+
             return View(product);
         }
-        // Xử lý xóa sản phẩm
-        [HttpPost, ActionName("DeleteConfirmed")]
+
+        // POST: Admin/Products/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            await _productRepository.DeleteAsync(id);
+            if (_context.Products == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Products'  is null.");
+            }
+            var product = await _context.Products.FindAsync(id);
+            if (product != null)
+            {
+                _context.Products.Remove(product);
+            }
+            
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        private bool ProductExists(int id)
+        {
+          return (_context.Products?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
