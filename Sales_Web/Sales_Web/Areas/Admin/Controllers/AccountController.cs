@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Sales_Web.Areas.Admin.Models.Accounts;
 using Sales_Web.Areas.Admin.Models.Repositories;
-using System.Security.Principal;
+using System.Threading.Tasks;
 
 namespace Sales_Web.Areas.Admin.Controllers
 {
@@ -17,16 +17,16 @@ namespace Sales_Web.Areas.Admin.Controllers
         }
 
         // GET: Account
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var accounts = _repository.GetAll();
+            var accounts = await _repository.GetAllAsync();
             return View(accounts);
         }
 
         // GET: Account/Details/5
-        public IActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
-            var account = _repository.GetById(id);
+            var account = await _repository.GetByIdAsync(id);
             if (account == null)
             {
                 return NotFound();
@@ -43,49 +43,49 @@ namespace Sales_Web.Areas.Admin.Controllers
         // POST: Account/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(ApplicationUser account)
+        public async Task<IActionResult> Create(ApplicationUser account)
         {
             if (ModelState.IsValid)
             {
-                _repository.Add(account);
+                await _repository.AddAsync(account);
                 return RedirectToAction(nameof(Index));
             }
             return View(account);
         }
 
-		// GET: Account/Edit/5
-		public IActionResult Edit(int id)
-		{
-			var account = _repository.GetById(id);
-			if (account == null)
-			{
-				return NotFound();
-			}
-			return View(account);
-		}
-
-		// POST: Account/Edit/5
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public IActionResult Edit(string id, ApplicationUser account) // Chuyển id thành string
-		{
-			if (id != account.Id)
-			{
-				return NotFound();
-			}
-
-			if (ModelState.IsValid)
-			{
-				_repository.Update(account);
-				return RedirectToAction(nameof(Index));
-			}
-			return View(account);
-		}
-
-		// GET: Account/Delete/5
-		public IActionResult Delete(int id)
+        // GET: Account/Edit/5
+        public async Task<IActionResult> Edit(int id)
         {
-            var account = _repository.GetById(id);
+            var account = await _repository.GetByIdAsync(id);
+            if (account == null)
+            {
+                return NotFound();
+            }
+            return View(account);
+        }
+
+        // POST: Account/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, ApplicationUser account) // Changed id to string
+        {
+            if (id != account.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                await _repository.UpdateAsync(account);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(account);
+        }
+
+        // GET: Account/Delete/5
+        public async Task<IActionResult> Delete(int id)
+        {
+            var account = await _repository.GetByIdAsync(id);
             if (account == null)
             {
                 return NotFound();
@@ -96,14 +96,14 @@ namespace Sales_Web.Areas.Admin.Controllers
         // POST: Account/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var account = _repository.GetById(id);
+            var account = await _repository.GetByIdAsync(id);
             if (account == null)
             {
                 return NotFound();
             }
-            _repository.Delete(account);
+            await _repository.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
     }

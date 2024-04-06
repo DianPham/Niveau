@@ -5,10 +5,10 @@ namespace Sales_Web.Areas.Admin.Models.Repositories
 {
     public interface IAccountRepository
     {
-        IEnumerable<ApplicationUser> GetAll();
-		ApplicationUser GetById(int id);
-        void Add(ApplicationUser account);
-        void Update(ApplicationUser account);
-        void Delete(ApplicationUser account);
+        Task<IEnumerable<ApplicationUser>> GetAllAsync();
+        Task<ApplicationUser> GetByIdAsync(int id);
+        Task AddAsync(ApplicationUser account);
+        Task UpdateAsync(ApplicationUser account);
+        Task DeleteAsync(int id);
     }
 }

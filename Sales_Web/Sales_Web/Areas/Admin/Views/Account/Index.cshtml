@@ -1,0 +1,27 @@
+﻿@using Sales_Web.Areas.Admin.Models.Accounts
+@model IEnumerable<ApplicationUser>
+
+<h2>Account List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th></th>
+            <!-- Add more columns if needed -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var account in Model)
+        {
+            <tr>
+                <td>@account.Id</td>
+                <td>@account.Email</td>
+                <td></td>
+                <td></td>
+                <!-- Add more columns if needed -->
+            </tr>
+        }
+    </tbody>
+</table>

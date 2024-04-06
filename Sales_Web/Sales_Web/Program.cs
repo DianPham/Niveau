@@ -24,10 +24,13 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 .AddDefaultUI()
 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+var services = builder.Services;
+
 builder.Services.AddRazorPages();
 
 builder.Services.AddScoped<IProductsRepository,EFProductsRepository>();
 builder.Services.AddScoped<ICategoriesRepository, EFCategoriesRepository>();
+builder.Services.AddScoped<IAccountRepository, EFAccountRepository>();
 
 builder.Services.AddControllersWithViews();
 
