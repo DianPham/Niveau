@@ -1,4 +1,4 @@
-using Microsoft.CodeAnalysis.Options;
+﻿using Microsoft.CodeAnalysis.Options;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Sales_Web.Data;
@@ -8,6 +8,19 @@ using Sales_Web.Areas.Admin.Models.Accounts;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Đặt trước AddControllersWithViews();
+
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+builder.Services.AddControllersWithViews();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -51,27 +64,34 @@ app.UseAuthentication();;
 app.MapRazorPages();
 
 app.UseAuthorization();
+// Đặt trước UseRouting
+app.UseSession();
 
 //app.MapControllerRoute(
-//	name: "default",
-//	pattern: "{controller=Home}/{action=Index}/{id?}");
-
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
-        name: "admin",
-        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-    );
-    endpoints.MapControllerRoute(
-        name: "user",
-        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-    );
-    endpoints.MapControllerRoute(
         name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}"
-    );
+        pattern: "{controller=Home}/{action=Index}/{id?}");
 });
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllerRoute(
+//        name: "admin",
+//        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+//    );
+//    endpoints.MapControllerRoute(
+//        name: "user",
+//        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+//    );
+//    endpoints.MapControllerRoute(
+//        name: "default",
+//        pattern: "{controller=Home}/{action=Index}/{id?}"eo 
+//    );
+//});
 
 
 app.Run();
